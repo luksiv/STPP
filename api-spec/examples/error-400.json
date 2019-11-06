@@ -1,0 +1,4 @@
+{
+    "error": "invalid_parameters",
+    "error_description": "Some required parameter is missing or it's format is invalid"
+}

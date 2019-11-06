@@ -1,0 +1,4 @@
+{
+    "error": "unauthorized",
+    "error_description": "You have not provided any credentials or they are invalid"
+}

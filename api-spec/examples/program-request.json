@@ -1,0 +1,128 @@
+{
+  "client_id": 123,
+  "trainer_id": 321,
+  "title": "Luko Sivicko sporto ir mitybos programa",
+  "description": "Sios programos tikslas yra padidinti raumenine mase",
+  "plans": [
+    {
+      "day_number": 1,
+      "description": "Si diena skirta atsistatymui",
+      "meals": [
+        {
+          "name": "Varkeciai su pienu",
+          "description": "Galima rinktis tarp alma arba valio, pagal skoni",
+          "meal_number": 1
+        },
+        {
+          "name": "Jogurtas Kreeka",
+          "description": null,
+          "meal_number": 2
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Pritupimai su stanga",
+          "sets": "Tarp 3 ir 4",
+          "reps": "Stengtis padaryti 8, paskutiniame sete iki failure",
+          "description": "Stengtis pritupti kuo giliau, nugara nelinksta"
+        },
+        {
+          "name": "Pritupimai be stangos",
+          "sets": "1",
+          "reps": "visus",
+          "description": null
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "description": "Si diena skirta sportui",
+      "meals": [
+        {
+          "name": "Varkeciai su pienu",
+          "description": "Galima rinktis tarp alma arba valio, pagal skoni",
+          "meal_number": 1
+        },
+        {
+          "name": "Jogurtas Kreeka",
+          "description": null,
+          "meal_number": 2
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Pritupimai su stanga",
+          "sets": "Tarp 3 ir 4",
+          "reps": "Stengtis padaryti 8, paskutiniame sete iki failure",
+          "description": "Stengtis pritupti kuo giliau, nugara nelinksta"
+        },
+        {
+          "name": "Pritupimai be stangos",
+          "sets": "1",
+          "reps": "visus",
+          "description": null
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "description": "Si diena skirta atsistatymui",
+      "meals": [
+        {
+          "name": "Varkeciai su pienu",
+          "description": "Galima rinktis tarp alma arba valio, pagal skoni",
+          "meal_number": 1
+        },
+        {
+          "name": "Jogurtas Kreeka",
+          "description": null,
+          "meal_number": 2
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Pritupimai su stanga",
+          "sets": "Tarp 3 ir 4",
+          "reps": "Stengtis padaryti 8, paskutiniame sete iki failure",
+          "description": "Stengtis pritupti kuo giliau, nugara nelinksta"
+        },
+        {
+          "name": "Pritupimai be stangos",
+          "sets": "1",
+          "reps": "visus",
+          "description": null
+        }
+      ]
+    },
+    {
+      "day_number": 2,
+      "description": "Si diena skirta sportui",
+      "meals": [
+        {
+          "name": "Varkeciai su pienu",
+          "description": "Galima rinktis tarp alma arba valio, pagal skoni",
+          "meal_number": 1
+        },
+        {
+          "name": "Jogurtas Kreeka",
+          "description": null,
+          "meal_number": 2
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Pritupimai su stanga",
+          "sets": "Tarp 3 ir 4",
+          "reps": "Stengtis padaryti 8, paskutiniame sete iki failure",
+          "description": "Stengtis pritupti kuo giliau, nugara nelinksta"
+        },
+        {
+          "name": "Pritupimai be stangos",
+          "sets": "1",
+          "reps": "visus",
+          "description": null
+        }
+      ]
+    }
+  ]
+}

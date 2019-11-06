@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: object
+displayName: Trainer
+properties:
+  user_details:
+    type: UserDetails
+    required: true
+  education:
+    type: string
+    required: false
+    example: "Lietuvos Sporto Universitetas"
+  experience:
+    type: string
+    required: false
+    example: "Bakalauras, IFBB licenzija"
+  certified:
+    type: boolean
+    required: true

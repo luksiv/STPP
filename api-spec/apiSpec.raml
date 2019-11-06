@@ -1,0 +1,403 @@
+#%RAML 1.0
+title: Sporti
+baseUri: localhost:3000/{version}
+version: 1.0
+mediaType: application/json
+
+traits:
+  204SuccessResponse: !include traits/204-response.raml
+  400ErrorResponse: !include traits/error-400-response.raml
+  401ErrorResponse: !include traits/error-401-response.raml
+  403ErrorResponse: !include traits/error-403-response.raml
+  404ErrorResponse: !include traits/error-404-response.raml
+  ProgramFilter: !include traits/program-filter.raml
+
+types:
+  UserDetails: !include types/user-details.raml
+  Trainer: !include types/trainer.raml
+  TrainerRequest: !include types/trainer-request.raml
+  TrainerService: !include types/trainer-service.raml
+  TrainerServiceRequest: !include types/trainer-service-request.raml
+  TrainerServiceCertification: !include types/certification.raml
+  TrainerServiceCertificationRequest: !include types/certification-request.raml
+  Assignment: !include types/assignment.raml
+  AssignmentRequest: !include types/assignment-request.raml
+  Client: !include types/client.raml
+  Program: !include types/program.raml
+  ProgramRequest: !include types/program-request.raml
+  Comment: !include types/comment.raml
+  CommentRequest: !include types/comment-request.raml
+  DayPlan: !include types/day-plan.raml
+  Meal: !include types/meal.raml
+  Exercise: !include types/exercise.raml
+
+/trainers:
+  get:
+    description: Get trainers
+    responses:
+      200:
+        body:
+          application/json:
+            type: array
+            required: true
+            example: !include examples/trainers.json
+            items:
+              type: Trainer
+              required: true
+  post:
+    description: Create trainer
+    is: [400ErrorResponse]
+    body:
+      application/json:
+        type: TrainerRequest
+        required: true
+    responses:
+      201:
+        body:
+          application/json:
+            type: Trainer
+            required: true
+            example: !include examples/trainer.json
+  /{trainerId}:
+    get:
+      description: Get trainer
+      is: [404ErrorResponse]
+      responses:
+        200:
+          body:
+            application/json:
+              type: Trainer
+              required: true
+              example: !include examples/trainer.json
+    put:
+      description: Update trainer
+      is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+
+    delete:
+      description: Delete trainer
+      is: [204SuccessResponse, 404ErrorResponse]
+    /assignments:
+      get:
+        description: Get assignments
+        responses:
+          200:
+            body:
+              application/json:
+                type: array
+                required: true
+                example: !include examples/assignments.json
+                items:
+                  type: Assignment
+                  required: true
+      post:
+        description: Assign trainer to a client
+        is: [400ErrorResponse, 404ErrorResponse]
+        body:
+          application/json:
+            type: AssignmentRequest
+            required: true
+            example: !include examples/assignment-request.json
+        responses:
+          201:
+            body:
+              type: Assignment
+              required: true
+              example: !include examples/assignment.json
+      /{clientId}:
+        get:
+          description: Get assignment
+          is:  [404ErrorResponse]
+          body:
+            application/json:
+              type: Assignment
+              required: true
+              example: !include examples/assignment.json
+        put:
+          description: Update assignment
+          is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+          body:
+            application/json:
+              type: AssignmentRequest
+              required: true
+              example: !include examples/assignment-request.json
+        delete:
+          description: Delete assignment
+          is:  [204SuccessResponse, 404ErrorResponse]
+    /clients:
+      get:
+        description: Get clients
+        responses:
+          200:
+            body:
+              application/json:
+                type: array
+                required: true
+                example: !include examples/clients.json
+                items:
+                  type: Client
+                  required: true
+    /services:
+      get:
+        description: Get services
+        responses:
+          200:
+            body:
+              application/json:
+                type: array
+                required: true
+                example: !include examples/trainer-services.json
+                items:
+                  type: TrainerService
+                  required: true
+      post:
+        description: Create service
+        is: [400ErrorResponse]
+        body:
+          application/json:
+            type: TrainerServiceRequest
+            required: true
+        responses:
+          201:
+            body:
+              application/json:
+                type: TrainerService
+                required: true
+                example: !include examples/trainer-service.json
+      /{serviceId}:
+        get:
+          description: Get service
+          is: [404ErrorResponse]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: TrainerService
+                  required: true
+                  example: !include examples/trainer-service.json
+        put:
+          description: Update service
+          is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+          body:
+            application/json:
+              type: TrainerServiceRequest
+              required: true
+              example: !include examples/trainer-service-request.json
+        delete:
+          description: Delete service
+          is: [204SuccessResponse, 404ErrorResponse]
+        /certifications:
+          get:
+            description: Get all certifications
+            responses:
+              200:
+                body:
+                  application/json:
+                    type: array
+                    required: true
+                    items:
+                      type: TrainerServiceCertification
+                      required: true
+          post:
+            description: Create certification
+            is: [400ErrorResponse]
+            body:
+              application/json:
+                type: TrainerServiceCertificationRequest
+                required: true
+            responses:
+              201:
+                body:
+                  application/json:
+                    type: TrainerServiceCertification
+                    required: true
+          /{certificationId}:
+            get:
+              description: Get certification
+              is: [404ErrorResponse]
+              responses:
+                200:
+                  body:
+                    application/json:
+                      type: TrainerServiceCertification
+                      required: true
+            put:
+              description: Update certification
+              is:  [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+              body:
+                application/json:
+                  type: TrainerServiceCertificationRequest
+                  required: true
+            delete:
+              description: Delete certification
+              is:  [204SuccessResponse, 404ErrorResponse]
+
+/clients:
+  get:
+    description: Get clients
+    responses:
+      200:
+        body:
+          application/json:
+            type: array
+            required: true
+            example: !include examples/clients.json
+            items:
+              type: Client
+              required: true
+  post:
+    description: Create client
+    is: [400ErrorResponse]
+    body:
+      application/json:
+        type: Client
+        required: true
+        example: !include examples/client.json
+    responses:
+      201:
+        body:
+          application/json:
+            type: Client
+            required: true
+            example: !include examples/client.json
+
+  /{clientId}:
+    get:
+      description: Get client
+      is: [404ErrorResponse]
+      body:
+        application/json:
+          type: Client
+          required: true
+          example: !include examples/client.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: Client
+              required: true
+              example: !include examples/client.json
+    put:
+      description: Update client
+      is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+
+    delete:
+      description: Delete client
+      is: [204SuccessResponse, 404ErrorResponse]
+    /trainers:
+      get:
+        description: Get client trainers
+        responses:
+          200:
+            body:
+              application/json:
+                type: array
+                required:  true
+                example: !include examples/trainers.json
+                items:
+                  type: Trainer
+                  required: true
+    /programs:
+      get:
+        description: Get programs
+        responses:
+          200:
+            body:
+              application/json:
+                type: array
+                required: false
+                example: !include examples/programs.json
+                items:
+                  type: Program
+                  required: true
+/programs:
+  get:
+    description: Get programs
+    is: [ProgramFilter]
+    responses:
+      200:
+        body:
+          application/json:
+            type: array
+            required: false
+            example: !include examples/programs.json
+            items:
+              type: Program
+              required: true
+  post:
+    description: Create program
+    body:
+      application/json:
+        displayName: body
+        type: ProgramRequest
+        example: !include examples/program-request.json
+    is: [400ErrorResponse, 404ErrorResponse]
+    responses:
+      201:
+        body:
+          application/json:
+            type: Program
+            required: true
+            example: !include examples/program.json
+  /{programId}:
+    get:
+      description: Get program
+      is:  [404ErrorResponse]
+      responses:
+        200:
+          body:
+            application/json:
+              type: Program
+              required: true
+              example: !include examples/program.json
+    put:
+      description: Update program
+      is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+      body:
+        application/json:
+          displayName: body
+          type: ProgramRequest
+          example: !include examples/program-request.json
+    delete:
+      description: Delete program
+      is: [204SuccessResponse, 404ErrorResponse]
+    /comments:
+      get:
+        description: Get comments
+        is: [404ErrorResponse]
+        responses:
+          200:
+            body:
+              application/json:
+                type: Comment
+                required: true
+                example: !include examples/comments.json
+      post:
+        description: Create comment
+        is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+        body:
+          application/json:
+            displayName: body
+            type: CommentRequest
+            example: !include examples/comment-request.json
+      /{commentId}:
+        get:
+          description: Get comment
+          is: [404ErrorResponse]
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Comment
+                  required: true
+                  example: !include examples/comment.json
+        put:
+          description: Update comment
+          is: [204SuccessResponse, 400ErrorResponse, 404ErrorResponse]
+          body:
+            application/json:
+              type: CommentRequest
+              required: true
+              example: !include examples/comment-request.json
+        delete:
+          description: Delete comment
+          is: [204SuccessResponse, 404ErrorResponse]

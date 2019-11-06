@@ -1,0 +1,36 @@
+#%RAML 1.0 DataType
+type: object
+displayName: Program
+description: A program created for a client containing day plans
+properties:
+  program_id:
+    type: integer
+    required: true
+  client_id:
+    type: integer
+    required: true
+  trainer_id:
+    type: integer
+    required: true
+  created_at:
+    type: integer
+    required: true
+    example: 1570019317
+  modified_at:
+    type: integer
+    required: true
+    example: 1570049317
+  title:
+    type: string
+    required: true
+    example: "Luko Sivicko sporto ir mitybos programa"
+  description:
+    type: string
+    required: false
+    example: "Sios programos tikslas yra padidinti raumenine mase"
+  plans:
+    type: array
+    required: true
+    items:
+      type: DayPlan
+      required: true

@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ProgramRequest
+properties:
+  client_id:
+    type: integer
+    required: true
+  trainer_id:
+    type: integer
+    required: true
+  title:
+    type: string
+    required: true
+    example: "Luko Sivicko sporto ir mitybos programa"
+  description:
+    type: string
+    required: false
+    example: "Sios programos tikslas yra padidinti raumenine mase"
+  plans:
+    type: array
+    required: true
+    items:
+      type: DayPlan
+      required: true

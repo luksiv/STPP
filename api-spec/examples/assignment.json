@@ -1,0 +1,30 @@
+{
+  "client": {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv",
+      "role": "client",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas@gmail.com",
+      "phone": null
+    },
+    "age": 10,
+    "gender": "male",
+    "height": 193,
+    "weight": 90
+  },
+  "trainer": {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv",
+      "role": "client",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas@gmail.com",
+      "phone": null
+    },
+    "education": "Lietuvos Sporto Universitetas, Bakalauras",
+    "experience": "IFBB licenzija",
+    "certified": true
+  },
+  "status": "rejected"
+}

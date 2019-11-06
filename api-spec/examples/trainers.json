@@ -1,0 +1,41 @@
+[
+  {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv1",
+      "role": "trainer",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas1@gmail.com",
+      "phone": null
+    },
+    "education": "Lietuvos Sporto Universitetas, Bakalauras",
+    "experience": "IFBB licenzija",
+    "certified": true
+  },
+  {
+    "user_details": {
+      "id": 124,
+      "username": "luksiv2",
+      "role": "trainer",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas2@gmail.com",
+      "phone": null
+    },
+    "education": "Lietuvos Sporto Universitetas, Bakalauras",
+    "experience": "IFBB licenzija",
+    "certified": true
+  },
+  {
+    "user_details": {
+      "id": 125,
+      "username": "luksiv3",
+      "role": "trainer",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas3@gmail.com",
+      "phone": "+37060123123"
+    },
+    "education": "Lietuvos Sporto Universitetas, Bakalauras",
+    "experience": "IFBB licenzija",
+    "certified": true
+  }
+]

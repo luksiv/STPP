@@ -1,0 +1,44 @@
+[
+  {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv",
+      "role": "client",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas@gmail.com",
+      "phone": null
+    },
+    "age": 10,
+    "gender": "male",
+    "height": 193,
+    "weight": 90
+  },
+  {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv",
+      "role": "client",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas@gmail.com",
+      "phone": null
+    },
+    "age": 10,
+    "gender": "male",
+    "height": 193,
+    "weight": 90
+  },
+  {
+    "user_details": {
+      "id": 123,
+      "username": "luksiv",
+      "role": "client",
+      "display_name": "Lukas Sivickas",
+      "email": "l.sivickas@gmail.com",
+      "phone": null
+    },
+    "age": 10,
+    "gender": "male",
+    "height": 193,
+    "weight": 90
+  }
+]

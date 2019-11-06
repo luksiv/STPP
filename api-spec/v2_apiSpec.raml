@@ -1,0 +1,135 @@
+#%RAML 1.0
+title: Sporti
+baseUri: localhost:3000/{version}
+version: 2.0
+mediaType: application/json
+
+traits:
+  204SuccessResponse: !include traits/204-response.raml
+  400ErrorResponse: !include traits/error-400-response.raml
+  401ErrorResponse: !include traits/error-401-response.raml
+  403ErrorResponse: !include traits/error-403-response.raml
+  404ErrorResponse: !include traits/error-404-response.raml
+  ProgramFilter: !include traits/program-filter.raml
+
+types:
+  UserDetails: !include types/user-details.raml
+  Trainer: !include types/trainer.raml
+  TrainerRequest: !include types/trainer-request.raml
+  TrainerService: !include types/trainer-service.raml
+  TrainerServiceRequest: !include types/trainer-service-request.raml
+  TrainerServiceCertification: !include types/certification.raml
+  TrainerServiceCertificationRequest: !include types/certification-request.raml
+  Assignment: !include types/assignment.raml
+  AssignmentRequest: !include types/assignment-request.raml
+  Client: !include types/client.raml
+  Program: !include types/program.raml
+  ProgramRequest: !include types/program-request.raml
+  Comment: !include types/comment.raml
+  CommentRequest: !include types/comment-request.raml
+  DayPlan: !include types/day-plan.raml
+  Meal: !include types/meal.raml
+  Exercise: !include types/exercise.raml
+
+/token:
+  post:
+    description: Get access token
+
+/trainers:
+  get:
+    description: Get trainers
+  post:
+    description: Create trainer
+  /{trainerId}:
+    get:
+      description: Get trainer
+    put:
+      description: Update trainer
+    delete:
+      description: Delete trainer
+    /services:
+      get:
+        description: Get services
+      post:
+        description: Create service
+      /{serviceId}:
+        get:
+          description: Get service
+        put:
+          description: Update service
+        delete:
+          description: Delete service
+
+/clients:
+  get:
+    description: Get clients
+  post:
+    description: Create client
+  /{clientId}:
+    get:
+      description: Get client
+    put:
+      description: Update client
+    delete:
+      description: Delete client
+
+/assignments:
+  get:
+    description: Get assignments
+  post:
+    description: Create assignment
+  /{assignmentId}:
+    get:
+      description: Get assignment
+    put:
+      description: Update assignment
+    delete:
+      description: Delete assignment
+    /programs:
+      get:
+        description: Get programs
+      post:
+        description: Create programs
+      /{programId}:
+        get:
+          description: Get program
+        put:
+          description: Update program
+        delete:
+          description: Delete program
+        /plans:
+          get:
+            description: Get plans
+          post:
+            description: Create plan
+          /{planId}:
+            get:
+              description: Get plan
+            put:
+              description: Update plan
+            delete:
+              description: Delete plan
+            /exercises:
+              get:
+                description: Get exercises
+              post:
+                description: Create exercise
+              /{exerciseId}:
+                get:
+                  description: Get exercise
+                put:
+                  description: Update exercise
+                delete:
+                  description: Delete exercise
+            /meals:
+              get:
+                description: Get meals
+              post:
+                description: Create meal
+              /{mealId}:
+                get:
+                  description: Get meal
+                put:
+                  description: Update meal
+                delete:
+                  description: Delete meal

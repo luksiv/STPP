@@ -1,0 +1,17 @@
+#%RAML 1.0 DataType
+type: object
+displayName: Service sertification
+properties:
+  certification_id:
+    type: integer
+    required: true
+  issuing_institution:
+    type: string
+    required: true
+    example: "Lietuvos sporto universitetas"
+  issuing_timestamp:
+    type: integer
+    required: true
+  expiration_timestamp:
+    type: integer
+    required: false
